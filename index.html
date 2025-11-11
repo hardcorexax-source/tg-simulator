@@ -178,6 +178,15 @@
             color: var(--tg-theme-link-color, #007aff);
             font-style: italic;
         }
+        
+        #menu-arr {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: calc(100% - 60px);
+            height: 60px;
+            border-radius: 30px;
+        }
     </style>
 </head>
 <body>
@@ -191,6 +200,10 @@
             <input type="text" class="search-input" placeholder="Search">
         </div>
     </div>
+    
+    <div id="menu-arr">
+        
+    </div>
 
     <ul class="chat-list" id="chatList"></ul>
 
@@ -202,11 +215,17 @@
         tg.requestFullscreen(); 
         // Получаем корень документа
         const root = document.documentElement;
-        const newSecBg = `${tg.themeParams.secondary_bg_color}dd`;
+        const newSecBg = `${tg.themeParams.secondary_bg_color}`;
         // Меняем значение переменной
         const header = document.querySelector('.header');
-        header.style.backgroundColor = newSecBg;
+        header.style.backgroundColor = newSecBg+"dd";
         header.style.backdropFilter = 'blur(25px)';
+        
+        const menu = document.querySelector('#menu');
+        menu.style.backgroundColor = newSecBg+"aa";
+        menu.style.backdropFilter = 'blur(15px)';
+        menu.style.border = `solid 1px ${newSecBg}7f`
+        
         
 
         // Данные чатов
