@@ -202,12 +202,13 @@
         tg.requestFullscreen(); 
         // Получаем корень документа
         const root = document.documentElement;
-        const newSecBg = `${tg.themeParams.secondary_bg_color}cc`;
+        const newSecBg = `${tg.themeParams.secondary_bg_color}dd`;
         // Меняем значение переменной
         const header = document.querySelector('.header');
-        
+        const pinned = document.querySelector('.chat-item.pinned');
         header.style.backgroundColor = newSecBg;
-        header.style.backdropFilter = 'blur(20px)';
+        pinned.style.backgroundColor = newSecBg;
+        header.style.backdropFilter = 'blur(25px)';
         
 
         // Данные чатов
