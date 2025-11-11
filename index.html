@@ -200,7 +200,12 @@
         tg.expand();
         tg.ready();
         tg.requestFullscreen(); 
-        alert(tg.themeParams.bg_color);
+        // Получаем корень документа
+        const root = document.documentElement;
+        const newSecBg = `${tg.themeParams.secondary_bg_color}99`;
+        // Меняем значение переменной
+        root.style.setProperty('--tg-theme-secondary-bg-color', newSecBg); // теперь фон будет красным
+        
 
         // Данные чатов
         const chats = [
