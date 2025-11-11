@@ -179,6 +179,14 @@
             font-style: italic;
         }
     </style>
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.expand();
+        tg.ready();
+        tg.requestFullscreen(); 
+        let hintColor = tg.themeParams.hint_color+'33';
+        document.querySelector('header').style.borderColor = hintColor;
+    </script>
 </head>
 <body>
     <div class="header">
@@ -196,10 +204,7 @@
 
     <script>
         // Инициализация Telegram Web App
-        const tg = window.Telegram.WebApp;
-        tg.expand();
-        tg.ready();
-        tg.requestFullscreen(); 
+        
 
         // Данные чатов
         const chats = [
