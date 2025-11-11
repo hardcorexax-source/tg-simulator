@@ -184,7 +184,10 @@
         tg.expand();
         tg.ready();
         tg.requestFullscreen(); 
-        let hintColor = tg.themeParams.hint_color+'33';
+        let hintColor = tg.themeParams?.hint_color 
+        ? tg.themeParams.hint_color + '33' 
+        : '#7f7f7f33';
+
         document.querySelector('header').style.borderColor = hintColor;
     </script>
 </head>
