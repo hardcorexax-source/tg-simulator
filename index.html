@@ -225,8 +225,10 @@
     <script>
         // Инициализация Telegram Web App
         const tg = window.Telegram.WebApp;
-        tg.expand();
         tg.ready();
+        tg.expand();
+        tg.disableVerticalSwipes(); // ← Вот это!
+        tg.enableClosingConfirmation();
         tg.requestFullscreen(); 
         // Получаем корень документа
         const root = document.documentElement;
